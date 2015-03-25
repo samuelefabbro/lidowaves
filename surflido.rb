@@ -11,7 +11,7 @@ h_onda_max = doc.css('td')[13].inner_html
 h_onda = doc.css('td')[15].inner_html
 
 
-get '/hi' do
-	Prova
-	h_onda
+get '/' do
+	"Hello World"
+	# h_onda
 end
