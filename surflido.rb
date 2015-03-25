@@ -25,6 +25,7 @@ end
 def dir_vento
 	piattaforma
 	@dir_vento = @doc.css('td')[11].inner_html
+	@gradi = @dir_vento.chomp(' GN')
 end
 
 get '/' do
