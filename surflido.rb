@@ -12,6 +12,5 @@ h_onda = doc.css('td')[15].inner_html
 
 
 get '/' do
-	"Hello World"
-	# h_onda
+	h_onda
 end
