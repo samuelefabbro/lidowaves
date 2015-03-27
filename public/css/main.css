@@ -3,7 +3,9 @@ body {
 }
 
 h4 {
-	color: #1B88F7;
+	font-size: 11px;
+	color: #B0B0B0;
 	margin-top: 30px;
 	margin-bottom: 0px;
+	text-transform: uppercase;
 }

@@ -31,9 +31,9 @@ def differenza
 	@cresce = "cresce"
 	@fermo = "fermo"	
 
-	@x = if (@h_onda_inizio > @h_onda)
+	@x = if (@h_onda_inizio.to_f > @h_onda.to_f)
 		@cala
-	elsif (@h_onda_inizio < @h_onda)
+	elsif (@h_onda_inizio.to_f < @h_onda.to_f)
 		@cresce
 	else
 		@fermo
@@ -59,9 +59,9 @@ def differenza_h_max
 	@cresce = "cresce"
 	@fermo = "fermo"	
 
-	@y = if (@h_onda_max_inizio > @h_onda_max)
+	@y = if (@h_onda_max_inizio.to_f > @h_onda_max.to_f)
 		@cala
-	elsif (@h_onda_max_inizio < @h_onda_max)
+	elsif (@h_onda_max_inizio.to_f < @h_onda_max.to_f)
 		@cresce
 	else
 		@fermo
@@ -86,9 +86,9 @@ def differenza_vento
 	@cresce = "cresce"
 	@fermo = "fermo"	
 
-	@z = if (@vento_inizio > @vento)
+	@z = if (@vento_inizio.to_f > @vento.to_f)
 		@cala
-	elsif (@vento_inizio < @vento)
+	elsif (@vento_inizio.to_f < @vento.to_f)
 		@cresce
 	else 
 		@fermo
