@@ -8,6 +8,31 @@ def piattaforma
 	@doc = Nokogiri::HTML(open("http://93.62.201.235/maree/ESPORTAZIONI/DATI/Piattaforma_CNR.html"))
 end
 
+def marea
+	@doc1 = Nokogiri::HTML(open("http://www.comune.venezia.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/2104"))
+end
+
+
+def valori_marea
+	marea
+	@data1 = @doc1.css('th')[3].text
+	@valore1 = @doc1.css('td')[1].text
+
+	@data2 = @doc1.css('th')[4].inner_html
+	@valore2 = @doc1.css('td')[3].inner_html
+
+	@data3 = @doc1.css('th')[5].inner_html
+	@valore3 = @doc1.css('td')[5].inner_html
+
+	@data4 = @doc1.css('th')[6].inner_html
+	@valore4 = @doc1.css('td')[7].inner_html
+
+	@data5 = @doc1.css('th')[7].inner_html
+	@valore5 = @doc1.css('td')[9].inner_html
+
+end
+
+
 
 def data
 	piattaforma
@@ -102,6 +127,10 @@ def dir_vento
 	# @gradi = @dir_vento.chomp(' GN')
 end
 
+
+
+
+
 get '/' do
 	data
 	h_onda
@@ -114,6 +143,7 @@ get '/' do
 	differenza_h_max
 	vento_inizio
 	differenza_vento
+	valori_marea
 	erb :index
 end
 

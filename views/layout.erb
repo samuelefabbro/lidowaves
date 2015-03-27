@@ -4,7 +4,43 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/main.css">
+	<script type="text/javascript"
+          src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+              'name':'visualization',
+              'version':'1',
+              'packages':['corechart']
+            }]
+          }"></script>
+
+    <script type="text/javascript">
+      google.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['data', 'Livello'],
+          ['<%= @data1 %>', <%= @valore1 %>,  ],
+          ['<%= @data2 %>', <%= @valore2 %>,  ],
+          ['<%= @data3 %>', <%= @valore3 %>,  ],
+          ['<%= @data4 %>', <%= @valore4 %>,  ],
+          ['<%= @data5 %>', <%= @valore5 %>,  ],
+        ]);
+
+        var options = {
+          title: 'Marea',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+
 	<title>Lido Waves</title>
+
 </head>
 <body>
 	<div class="container">
