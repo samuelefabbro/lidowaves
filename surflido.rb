@@ -35,7 +35,7 @@ def differenza
 		@cala
 	elsif (@h_onda_inizio < @h_onda)
 		@cresce
-	elsif 
+	else
 		@fermo
     end	
 
@@ -63,7 +63,7 @@ def differenza_h_max
 		@cala
 	elsif (@h_onda_max_inizio < @h_onda_max)
 		@cresce
-	elsif 
+	else
 		@fermo
     end	
 
@@ -90,7 +90,7 @@ def differenza_vento
 		@cala
 	elsif (@vento_inizio < @vento)
 		@cresce
-	elsif 
+	else 
 		@fermo
     end	
 
